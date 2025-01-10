@@ -1,17 +1,258 @@
+<!--
+ - Sixcious
+ - @copyright (c) 2020 Six
+ - @license https://sixcious.com/LICENSE
+ -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sixcious</title>
-    <style>
-      body {
-        font-family: Roboto, Arial, Meiryo, sans-serif;
-        text-size-adjust: none;
-      }
-    </style>
+    <link rel="icon" href="/app/media/icon-dark.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/app/media/icon-light.png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="/app/media/icon-apple.png">
+    <link rel="stylesheet" href="/lib/material/material-components-web.min.css">
+    <link rel="stylesheet" href="/lib/hover/hover.css">
+    <link rel="stylesheet" href="/shr/common/theme.css">
+    <link rel="stylesheet" href="/shr/common/ui.css">
+    <link rel="stylesheet" href="/app/common/app.css">
+    <script src="/lib/spa/spa-index.js"></script>
+    <script type="module" src="/shr/common/template.js"></script>
+    <script defer src="/lib/material/material-components-web.min.js"></script>
+    <script defer src="/lib/floating-ui/floating-ui.core.umd.min.js"></script>
+    <script defer src="/lib/floating-ui/floating-ui.dom.umd.min.js"></script>
+    <script defer src="/shr/common/mdc.js"></script>
+    <script defer src="/shr/common/promisify.js"></script>
+    <script defer src="/shr/common/tooltip.js"></script>
+    <script defer src="/shr/common/ui.js"></script>
+    <script defer src="/shr/common/util.js"></script>
+    <script defer src="/app/common/v.js"></script>
+    <script defer src="/app/common/app.js"></script>
   </head>
   <body>
-    <main>6 ❤️</main>
+    <header class=" mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <button id="drawer-button-2" class="mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded">
+            <md-icon icon="solid.svg#bars"></md-icon>
+          </button>
+          <span class="mdc-top-app-bar__title">
+            <div class="logo">
+              <a class="logo-link" href="/">
+                <div class="logo-six-heart">
+                  <md-icon class="logo-heart hvr-grow-2x" icon="solid.svg#heart"></md-icon>
+                  <div class="logo-six">6</div>  
+                </div>
+                <span class="logo-text">Sixcious</span>
+              </a>
+            </div>
+          </span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+          <div id="theme-button" class="icon-button" data-tooltip="theme-button-tooltip">
+            <svg id="theme-icon" class="hvr-grow"><use href="/lib/feather/feather.svg#sun-moon"></use></svg>
+          </div>
+        </section>
+      </div>
+    </header>
+    <md-drawer>
+      <slot data-slot="drawer-content">
+        <md-list-group id="drawer-list-group">
+          <md-list id="drawer-list">
+            <md-list-item id="url-incrementer" i18n="url-incrementer" value="url-incrementer" icon="/app/media/symbol.svg#url-incrementer" no-collapse></md-list-item>
+            <md-list-item i18n="infy-scroll" i18n="infy-scroll" value="infy-scroll" icon="/app/media/symbol.svg#infy-scroll" no-collapse></md-list-item>
+            <md-list-item id="downloadyze" i18n="downloadyze" value="downloadyze" icon="/app/media/symbol.svg#downloadyze" no-collapse></md-list-item>
+            <md-list-item id="elempick" i18n="elempick" value="elempick" icon="/app/media/symbol.svg#elempick" no-collapse></md-list-item>
+            <md-list-item id="url-increment-button" i18n="url-increment-button" value="url-increment-button" icon="alt.svg#solid-circle-plus" no-collapse></md-list-item>
+            <md-list-item id="url-decrement-button" i18n="url-decrement-button" value="url-decrement-button" icon="alt.svg#solid-circle-minus" no-collapse></md-list-item>
+          </md-list>
+        </md-list-group>
+      </slot>
+      <slot data-slot="app-content">
+        <main>
+          <section id="default">
+            <h6>
+              <span data-i18n="default"></span>
+              <md-icon id="welcome-heart" icon="solid.svg#heart"></md-icon>
+            </h6>
+            <blockquote>
+              <p data-i18n="default-description-1"></p>
+              <p data-i18n="default-description-2"></p>
+              <p data-i18n="default-description-3"></p>
+            </blockquote>
+            <div class="button-group">
+              <md-button i18n="help" type="raised" href="/help" target="_self"></md-button>
+              <md-button i18n="privacy-policy" type="raised" class="red" href="/privacy-policy" target="_self"></md-button>
+            </div>
+          </section>
+          <section id="url-incrementer">
+            <h6 data-i18n="url-incrementer"></h6>
+            <blockquote>
+              <img src="/app/media/urli.svg" alt="mascot" class="mascot urli">
+              <p data-i18n="url-incrementer-description"></p>
+            </blockquote>
+          </section>
+          <section id="infy-scroll">
+            <h6 data-i18n="infy-scroll"></h6>
+            <blockquote>
+              <svg class="app-icon"><use href="/app/media/symbol.svg#infy-scroll"></use></svg>
+              <p data-i18n="infy-scroll-description"></p>
+            </blockquote>
+          </section>
+          <section id="downloadyze">
+            <h6 data-i18n="downloadyze"></h6>
+            <blockquote>
+              <svg class="app-icon"><use href="/app/media/symbol.svg#downloadyze"></use></svg>
+              <p data-i18n="downloadyze-description"></p>
+            </blockquote>
+          </section>
+          <section id="elempick">
+            <h6 data-i18n="elempick"></h6>
+            <blockquote>
+              <svg class="app-icon"><use href="/app/media/symbol.svg#elempick"></use></svg>
+              <p data-i18n="elempick-description"></p>
+            </blockquote>
+          </section>
+          <section id="url-increment-button">
+            <h6 data-i18n="url-increment-button"></h6>
+            <blockquote>
+              <svg class="app-icon"><use href="/app/media/symbol.svg#url-increment-button"></use></svg>
+              <p data-i18n="url-increment-button-description"></p>
+            </blockquote>
+          </section>
+          <section id="url-decrement-button">
+            <h6 data-i18n="url-decrement-button"></h6>
+            <blockquote>
+              <svg class="app-icon"><use href="/app/media/symbol.svg#url-decrement-button"></use></svg>
+              <p data-i18n="url-decrement-button-description"></p>
+            </blockquote>
+          </section>
+          <section id="about">
+            <h6 data-i18n="about"></h6>
+            <p data-i18n="about-description"></p>
+            <div id="credits">
+              <div id="credits-list">
+                <h4 data-i18n="libraries"></h4>
+                <ul>
+                  <li><a href="https://material.io">Material Design</a></li>
+                  <li><a href="https://lit.dev/">Lit</a></li>
+                  <li><a href="https://fonts.google.com/specimen/Roboto">Roboto</a></li>
+                  <li><a href="https://fonts.adobe.com/fonts/lithos">Lithos</a></li>
+                  <li><a href="https://fontawesome.com">FontAwesome</a></li>
+                  <li><a href="https://github.com/feathericons/feather">Feather</a></li>
+                  <li><a href="https://ianlunn.github.io/Hover">Hover.css</a></li>
+                  <li><a href="https://github.com/floating-ui/floating-ui">Floating UI</a></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section id="help">
+            <h6 data-i18n="help"></h6>
+            <p data-i18n="help-description"></p>
+            <div class="button-group">
+              <md-button href="https://github.com/sixcious" target="_self" icon="brands.svg#github" i18n="github"></md-button>
+            </div>
+          </section>
+          <section id="privacy-policy">
+            <h6 data-i18n="privacy-policy"></h6>
+            <p data-i18n="privacy-policy-description-1"></p>
+            <p data-i18n="privacy-policy-description-2"></p>
+            <ul>
+              <li data-i18n="privacy-policy-list-1"></li>
+              <li data-i18n="privacy-policy-list-2"></li>
+              <li data-i18n="privacy-policy-list-3"></li>
+              <li data-i18n="privacy-policy-list-4"></li>
+              <li data-i18n="privacy-policy-list-5"></li>
+              <li data-i18n="privacy-policy-list-6"></li>
+            </ul>
+          </section>
+          <section id="license">
+            <h6 data-i18n="license"></h6>
+            <pre id="license-description">
+            </pre>  
+          </section>
+          <section id="special">
+            <h6 data-i18n="special"></h6>
+            <p>
+              <span data-i18n="special-description"></span>
+              <md-icon class="logo-heart" icon="solid.svg#heart"></md-icon>  
+            </p>
+          </section>
+        </main>
+        <footer>
+          <div id="footer-container">
+            <div class="flex-row">
+              <div id="footer-logo" class="logo">
+                <a class="logo-link" href="/">
+                  <div class="logo-mwhby">
+                    <span>mw</span>
+                    <md-icon class="logo-heart hvr-grow-2x" icon="solid.svg#heart"></md-icon>
+                    <span>by</span>
+                  </div>
+                  <div class="logo-six">6</div>
+                </a>
+              </div>  
+              <div id="footer-vendors">
+                <h6 data-i18n="available-from"></h6>
+                <ul>
+                  <li>
+                    <a href="https://chromewebstore.google.com/search/sixcious.com?filterBy=establishedPublisher">
+                      <img src="/app/media/vendor/chrome.svg" width="20px" height="20px">
+                      <span data-i18n="chrome-store"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://microsoftedge.microsoft.com/addons/search?developer=sixcious">
+                      <img src="/app/media/vendor/edge.svg" width="20px" height="20px">
+                      <span data-i18n="edge-store"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://addons.mozilla.org/firefox/search/?q=sixcious">
+                      <img src="/app/media/vendor/firefox.svg" width="20px" hieght="20px">
+                      <span data-i18n="firefox-store"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="footer-site">
+                <h6 data-i18n="site-content"></h6>
+                <ul>
+                  <li>
+                    <a href="/about">
+                      <md-icon icon="solid.svg#circle-info"></md-icon>
+                      <span data-i18n="about"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/help">
+                      <md-icon icon="alt.svg#solid-circle-question"></md-icon>
+                      <span data-i18n="help"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/privacy-policy">
+                      <md-icon icon="solid.svg#shield-halved"></md-icon>
+                      <span data-i18n="privacy-policy"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="footer-copyright">Copyright &copy; 2020 Six</div>
+          </div>
+        </footer>
+      </slot>
+    </md-drawer>
+    <md-dialog id="main-dialog">
+      <slot data-slot="main-dialog-content">
+        <p id="main-dialog-description" data-i18n></p>
+      </slot>
+      <slot data-slot="main-dialog-actions">
+        <md-dialog-button i18n="close-button"></md-dialog-button>
+      </slot>
+    </md-dialog>
+    <md-snackbar id="main"></md-snackbar>
   </body>
 </html>

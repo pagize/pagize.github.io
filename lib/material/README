@@ -1,0 +1,2 @@
+Due to being deprecated, material-components-web.min.css was modified to rename all 12 instances of the CSS media query -ms-high-contrast to forced-colors.
+See: https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/

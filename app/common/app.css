@@ -1,0 +1,323 @@
+/**
+ * Sixcious
+ * @copyright (c) 2020 Six
+ * @license https://sixcious.com/LICENSE
+ */
+
+:root {
+  --mdc-theme-primary-light: #262626;
+  --mdc-theme-primary-light-rgb: 38,38,38;
+  --mdc-theme-primary-dark: #646C71;
+  --mdc-theme-primary-dark-rgb: 100,108,113;
+  --mdc-header-height: 64px;
+  --mdc-header-height-599: 56px;
+  --header-size: 24px;
+}
+
+body {
+  font-size: 1rem;
+  margin: 0;
+  max-width: inherit;
+  padding: 0;
+}
+
+a {
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
+ul {
+  max-width: 800px;
+}
+
+::selection {
+  background-color: var(--error-color);
+  color: #FFFFFF;
+}
+
+.mdc-drawer-app-content {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+header, footer {
+  flex-shrink: 1;
+}
+
+header .mdc-top-app-bar__row,
+main,
+footer #footer-container  {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+header.mdc-top-app-bar, .mdc-drawer, footer {
+  background-color: var(--mdc-theme-background-alternate);
+}
+
+main {
+  max-width: 1000px;
+  padding: 0 2rem;
+}
+
+.mdc-drawer {
+  position: fixed;
+  top: var(--mdc-header-height);
+  border: none;
+}
+
+@media (width < 600px) {
+  .mdc-drawer {
+    top: var(--mdc-header-height-599);
+  }
+}
+
+.mdc-drawer__header {
+  display: none;
+}
+
+.mdc-top-app-bar {
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
+#theme-button {
+  margin: 1rem;
+}
+
+svg#theme-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.mdc-icon-button svg {
+  vertical-align: unset;
+}
+
+.logo {
+  user-select: none;
+}
+
+.logo-six-heart {
+  display: inline-block;
+}
+
+.logo-six {
+  color: var(--mdc-theme-on-surface);
+  font-family: LithosPro, "Lithos Pro", Roboto, Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1rem;
+  transform: rotate(-9deg);
+}
+
+svg.logo-heart {
+  fill: var(--mdc-theme-error-dark);
+}
+
+header svg.logo-heart, footer svg.logo-heart {
+  fill: var(--mdc-theme-error-dark);
+  width: 12px;
+  height: 12px;
+  margin-left: 26px;
+  position: relative;
+}
+
+header svg.logo-heart {
+  z-index: 6;
+}
+
+.logo-text {
+  vertical-align: text-bottom;
+}
+
+.logo-link {
+  display: inline-block;
+  color: var(--mdc-theme-on-surface);
+  text-decoration: none;
+  margin-top: -16px;
+}
+
+main {
+  margin: calc(var(--mdc-header-height) + 3rem) auto 1rem auto;
+}
+
+@media (width < 600px) {
+  main {
+    margin: calc(var(--mdc-header-height-599) + 3rem) auto 1rem auto;
+  }
+}
+
+main h6 {
+  font-size: var(--header-size);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+main h6 svg#welcome-heart {
+  fill: var(--mdc-theme-error-dark);
+  vertical-align: initial;
+  width: var(--header-size);
+  height: var(--header-size);
+}
+
+main .mascot {
+  width: 300px;
+  height: 300px;
+  float: left;
+}
+
+main svg.app-icon {
+  width: 200px;
+  height: 200px;
+  margin: 1rem 2rem;
+  float: left;
+}
+
+@media (width < 600px) {
+  .mascot, svg.app-icon {
+    display: none;
+  }
+}
+
+main blockquote {
+  background-color: var(--mdc-theme-background-alternate);
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+main #default blockquote {
+  margin-top: 4rem;
+}
+
+main .button-group {
+  margin: 3rem auto;
+  text-align: center;
+}
+
+main #about ul {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+footer {
+  padding: 2rem;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer ul li {
+  margin: 1rem;
+}
+
+footer ul li > a {
+  padding: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+footer ul li > a:hover {
+  color: var(--error-color);
+  transition-duration: 0.2s;
+transition-property: color;
+}
+
+footer ul li > a:hover > svg {
+  fill: var(--error-color);
+  transition-duration: 0.2s;
+transition-property: fill;
+}
+
+footer svg, footer img {
+  width: 24px;
+  height: 24px;
+}
+
+#footer-logo {
+  align-self: center;
+}
+
+#footer-logo .logo-link {
+  margin: 0;
+}
+
+#footer-logo .logo-six {
+  font-size: 5rem;
+}
+
+#footer-logo svg.logo-heart {
+  width: 14px;
+  height: 14px;
+  margin-left: 0;
+  vertical-align: middle;
+}
+
+#footer-logo .logo-mwhby {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#footer-copyright {
+  display: none;
+}
+
+@media (width < 600px) {
+  footer .flex-row {
+    flex-direction: column-reverse;
+  }
+  footer .flex-row > *:not(:first-child) {
+    margin-bottom: 2rem;
+  }
+  footer #footer-logo {
+    align-self: end;
+  }
+}
+
+:root[data-theme="dark"] {
+  .urli {
+    content: url("/app/media/urli-dark.svg");
+  }  
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] {
+    .urli {
+      content: url("/app/media/urli-dark.svg");
+    }  
+  }
+}
+
+#credits {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#credits-list > h4 {
+  font-size: 1rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+#credits-list > ul {
+  list-style-type: none;
+}
