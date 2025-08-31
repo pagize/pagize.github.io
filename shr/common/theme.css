@@ -1,6 +1,6 @@
 /**
  * Theme
- * @copyright (c) 2020 Six
+ * @copyright (c) 2020 Sixcious
  * @license https://github.com/sixcious/shr/blob/main/LICENSE
  */
 
@@ -60,9 +60,6 @@
   --error-color: var(--mdc-theme-error);
   --error-overlay-color: #FF4D8B;
   --google-blue-color: #1A73E8;
-  --elempick-color: #1A73E8;
-  --url-increment-button-color: #0A6C8C;
-  --url-decrement-button-color: #0A6C8C;
 }
 
 :root[data-theme="light"], :root {

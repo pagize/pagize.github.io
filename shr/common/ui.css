@@ -1,6 +1,6 @@
 /**
  * UI
- * @copyright (c) 2020 Six
+ * @copyright (c) 2020 Sixcious
  * @license https://github.com/sixcious/shr/blob/main/LICENSE
  */
 
@@ -845,10 +845,14 @@ label.tooltip:not(.tooltip-without-underline),
   cursor: pointer;
 }
 
-#special-background-icons {
+.mdc-dialog #special-background-icons {
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+
+#special-background-icons {
+  user-select: none;
 }
 
 #special-background-icon-1 {

@@ -1,6 +1,6 @@
 <!--
  - Sixcious
- - @copyright (c) 2020 Six
+ - @copyright (c) 2020 Sixcious
  - @license https://sixcious.com/LICENSE
  -->
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <title>Sixcious</title>
     <link rel="icon" href="/app/media/icon-dark.png" media="(prefers-color-scheme: light)">
     <link rel="icon" href="/app/media/icon-light.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" href="/app/media/icon.png">
+    <link rel="apple-touch-icon" href="/app/media/icon-apple.png">
     <link rel="stylesheet" href="/lib/material/material-components-web.min.css">
     <link rel="stylesheet" href="/lib/hover/hover.css">
     <link rel="stylesheet" href="/shr/common/theme.css">
@@ -131,20 +131,12 @@
           <section id="about">
             <h6 data-i18n="about"></h6>
             <p data-i18n="about-description"></p>
-            <div id="credits">
-              <div id="credits-list">
-                <h4 data-i18n="libraries"></h4>
-                <ul>
-                  <li><a href="https://material.io">Material Design</a></li>
-                  <li><a href="https://lit.dev/">Lit</a></li>
-                  <li><a href="https://fonts.google.com/specimen/Roboto">Roboto</a></li>
-                  <li><a href="https://fonts.adobe.com/fonts/lithos">Lithos</a></li>
-                  <li><a href="https://fontawesome.com">FontAwesome</a></li>
-                  <li><a href="https://github.com/feathericons/feather">Feather</a></li>
-                  <li><a href="https://ianlunn.github.io/Hover">Hover.css</a></li>
-                  <li><a href="https://github.com/floating-ui/floating-ui">Floating UI</a></li>
-                </ul>
-              </div>
+            <div id="about-libraries" class="grayscale">
+              <a href="https://material.io" target="_blank"><img src="/app/media/library/material.svg"></a>
+              <a href="https://lit.dev" target="_blank"><img src="/app/media/library/lit.svg"></a>
+              <a href="https://github.com" target="_blank"><img src="/app/media/library/github.svg"></a>
+              <a href="https://floating-ui.com" target="_blank"><img src="/app/media/library/floating-ui.svg"></a>
+              <a href="https://fontawesome.com" target="_blank"><img src="/app/media/library/font-awesome.svg"></a>
             </div>
           </section>
           <section id="help">
@@ -173,6 +165,18 @@
               <span data-i18n="special-description"></span>
               <md-icon class="logo-heart" icon="solid.svg#heart"></md-icon>  
             </p>
+          </section>
+          <section id="feedback"></section>
+          <section id="404">
+            <h6>
+              <span data-i18n="404"></span>
+            </h6>
+            <blockquote>
+              <p data-i18n="404-description"></p>
+            </blockquote>
+            <div class="button-group">
+              <md-button i18n="404-home" type="raised" class="red" href="/" target="_self"></md-button>
+            </div>
           </section>
         </main>
         <footer>
@@ -235,16 +239,21 @@
                 </ul>
               </div>
             </div>
-            <div id="footer-copyright">Copyright &copy; 2020 Six</div>
+            <div id="footer-copyright">Copyright &copy; 2020 Sixcious</div>
           </div>
         </footer>
       </slot>
     </md-drawer>
-    <md-dialog id="main-dialog">
-      <slot data-slot="main-dialog-content">
-        <p id="main-dialog-description" data-i18n></p>
+    <md-dialog id="special-dialog">
+      <slot data-slot="special-dialog-content">
+        <div id="special-dialog-pre">
+          <p id="special-dialog-description" data-i18n></p>
+          <md-checkbox id="special-dialog"></md-checkbox>
+        </div>
+        <div id="special-dialog-post">
+        </div>
       </slot>
-      <slot data-slot="main-dialog-actions">
+      <slot data-slot="special-dialog-actions">
         <md-dialog-button i18n="close-button"></md-dialog-button>
       </slot>
     </md-dialog>

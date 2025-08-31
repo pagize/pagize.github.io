@@ -1,12 +1,12 @@
 /**
  * Template
- * @copyright (c) 2020 Six
+ * @copyright (c) 2020 Sixcious
  * @license https://github.com/sixcious/shr/blob/main/LICENSE
  */
-import{html,nothing,render}from"/lib/lit/lit.all.mjs";class TemplateElement extends HTMLElement{slotChildren=!1;constructor(){super(),[...this.attributes].forEach((t=>this[t.nodeName]=t.nodeValue)),this.class=this.hasAttribute("class")?" "+this.class:"",this.tooltip=this.hasAttribute("tooltip")?this.tooltip||this.id+"-tooltip":void 0}connectedCallback(){if(render(this.template(),this),this.slotChildren){const t=[...this.children];for(let e=0;e<t.length-1;e++){t[e].dataset.slot=this.id}}this.replaceWith(...this.children)}template(){return html``}}class MDButton extends TemplateElement{template(){return this.href?html`
+import{html,nothing,render}from"/lib/lit/lit.all.mjs";class TemplateElement extends HTMLElement{slotChildren=!1;constructor(){super(),[...this.attributes].forEach(t=>this[t.nodeName]=t.nodeValue),this.class=this.hasAttribute("class")?" "+this.class:"",this.tooltip=this.hasAttribute("tooltip")?this.tooltip||this.id+"-tooltip":void 0}connectedCallback(){if(render(this.template(),this),this.slotChildren){const t=[...this.children];for(let e=0;e<t.length-1;e++){t[e].dataset.slot=this.id}}this.replaceWith(...this.children)}template(){return html``}}class MDButton extends TemplateElement{template(){return this.href?html`
       <a class="mdc-button mdc-button--${this.type||"raised"}${this.class}" id="${this.id}-button" href="${this.href}" target="${this.target?nothing:"_blank"}" data-tooltip="${this.tooltip??nothing}">
         <svg data-lit-remove="${this.hasAttribute("icon")?nothing:""}">
-          <use href="/lib/${this.library??"fontawesome"}/${this.icon}"></use>
+          <use href="/lib/${this.library??"fontawesome"}/${this.icon??"solid.svg#asterisk"}"></use>
         </svg>
         <span class="mdc-button__ripple"></span>
         <span class="mdc-button__label" data-i18n="${this.i18n||this.id+"-button"}">${this.id}</span>
@@ -14,7 +14,7 @@ import{html,nothing,render}from"/lib/lit/lit.all.mjs";class TemplateElement exte
     `:html`
       <button class="mdc-button mdc-button--${this.type||"raised"}${this.class}" id="${this.id}-button" data-tooltip="${this.tooltip??nothing}">
         <svg data-lit-remove="${this.hasAttribute("icon")?nothing:""}">
-          <use href="/lib/${this.library??"fontawesome"}/${this.icon}"></use>
+          <use href="/lib/${this.library??"fontawesome"}/${this.icon??"solid.svg#asterisk"}"></use>
         </svg>
         <span class="mdc-button__ripple"></span>
         <span class="mdc-button__label" data-i18n="${this.i18n||this.id+"-button"}"></span>
@@ -224,7 +224,7 @@ import{html,nothing,render}from"/lib/lit/lit.all.mjs";class TemplateElement exte
       </div>
     `}}class MDSwitch extends TemplateElement{template(){const t=this.hasAttribute("icon"),e=this.hasAttribute("smaller-label");return html`
       <div class="mdc-switch-container${this.class}">
-        <svg class="mdc-switch__icon" id="${this.id}-icon" data-lit-remove="${t?nothing:""}"><use href="/lib/fontawesome/${this.icon}"></use></svg>
+        <svg class="mdc-switch__icon" id="${this.id}-icon" data-lit-remove="${t?nothing:""}"><use href="/lib/fontawesome/${this.icon??"solid.svg#asterisk"}"></use></svg>
         <label class="mdc-switch__label${e?" smaller-label":""}" for="${this.id}-input" id="${this.id}-label" data-i18n></label>
         <div class="mdc-switch" id=${this.id}>
           <div class="mdc-switch__track"></div>
@@ -304,9 +304,9 @@ import{html,nothing,render}from"/lib/lit/lit.all.mjs";class TemplateElement exte
           <div id="theme-button" class="icon-button" data-tooltip="theme-button-tooltip">
             <svg id="theme-icon" class="options-header-svg hvr-grow"><use href="/lib/feather/feather.svg#sun-moon"></use></svg>
           </div>
-          <a id="discord-button" class="icon-button" data-tooltip="discord-button-tooltip" href="https://discord.gg/__discord__" target="_blank" data-lit-remove="${this.hasAttribute("discord")?nothing:""}">
-            <svg id="discord-icon" class="options-header-svg hvr-grow"><use href="/lib/fontawesome/brands.svg#discord"></use></svg>
-          </a>
+          <div id="feedback-button" class="icon-button" data-tooltip="feedback-button-tooltip">
+            <svg id="feedback-icon" class="options-header-svg hvr-grow smaller-icon"><use href="/lib/fontawesome/regular.svg#comment-dots"></use></svg>
+          </div>
           <md-button id="help-guide" type="raised" href="https://github.com/sixcious/__app__/wiki"></md-button>
           <md-button id="report-an-issue" type="outlined" href="https://github.com/sixcious/__app__/issues"></md-button>
         </div>
