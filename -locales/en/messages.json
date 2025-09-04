@@ -40,7 +40,6 @@
   "theme_light_label": { "message": "Light" },
   "theme_dark_label": { "message": "Dark" },
   "credits": { "message": "Credits" },
-  "libraries": { "message": "LIBRARIES" },
   "available_from": { "message": "Available From" },
   "site_content": { "message": "Site Content" },
   "github": { "message": "GitHub" },
