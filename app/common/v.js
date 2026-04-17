@@ -1,4 +1,4 @@
-/**
+/*!
  * Sixcious
  * @copyright (c) 2020 Sixcious
  * @license https://sixcious.com/LICENSE

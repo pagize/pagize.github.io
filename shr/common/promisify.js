@@ -1,4 +1,4 @@
-/**
+/*!
  * Promisify
  * @copyright (c) 2020 Sixcious
  * @license https://github.com/sixcious/shr/blob/main/LICENSE
