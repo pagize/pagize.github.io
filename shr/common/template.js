@@ -374,7 +374,7 @@ import{html,nothing,render}from"/lib/lit/lit.all.mjs";class TemplateElement exte
         </a>
       </div>
     `}}class SupportHearts extends TemplateElement{template(){return html`
-      <div class="grid-row" data-display="${this.display??nothing}">
+      <div class="grid-row${this.class}" data-display="${this.display??nothing}">
         <div id="${this.hasAttribute("no-id")?nothing:"support-hearts"}" class="support-hearts justify-self-end margin-right-1">
           <md-icon icon="solid.svg#heart"></md-icon>
           <md-icon icon="solid.svg#heart"></md-icon>

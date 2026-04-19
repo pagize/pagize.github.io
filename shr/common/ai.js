@@ -50,7 +50,7 @@ class AI {
     if (AI.#availability === "unavailable") {
       if (previousAvailability !== "unavailable") {
         AI.#message(Util.i18nGetMessage("ai_unavailable"), "error");
-        AI.#message(Util.i18nGetMessage("ai_setup", ["em", Util.getSupportE()]));
+        AI.#message(Util.i18nGetMessage("ai_setup", ["em", Util.decode("SEM")]));
       }
       return;
     }
