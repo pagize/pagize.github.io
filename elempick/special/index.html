@@ -12,18 +12,17 @@
     <link rel="icon" href="/app/media/icon-dark.png" media="(prefers-color-scheme: light)">
     <link rel="icon" href="/app/media/icon-light.png" media="(prefers-color-scheme: dark)">
     <link rel="apple-touch-icon" href="/app/media/icon-apple.png">
-    <link rel="stylesheet" href="/lib/material/material-components-web.min.css">
     <link rel="stylesheet" href="/lib/hover/hover.css">
+    <link rel="stylesheet" href="/lib/material/material-components-web.min.css">
     <link rel="stylesheet" href="/shr/common/theme.css">
     <link rel="stylesheet" href="/shr/common/ui.css">
     <link rel="stylesheet" href="/app/common/app.css">
     <script src="/lib/spa/spa-index.js"></script>
     <script type="module" src="/shr/common/template.js"></script>
-    <script defer src="/lib/material/material-components-web.min.js"></script>
     <script defer src="/lib/floating-ui/floating-ui.core.umd.min.js"></script>
     <script defer src="/lib/floating-ui/floating-ui.dom.umd.min.js"></script>
+    <script defer src="/lib/material/material-components-web.min.js"></script>
     <script defer src="/shr/common/mdc.js"></script>
-    <script defer src="/shr/common/promisify.js"></script>
     <script defer src="/shr/common/tooltip.js"></script>
     <script defer src="/shr/common/ui.js"></script>
     <script defer src="/shr/common/util.js"></script>
@@ -158,11 +157,25 @@
               <li data-i18n="privacy-policy-list-5"></li>
               <li data-i18n="privacy-policy-list-6"></li>
               <li data-i18n="privacy-policy-list-7"></li>
+              <li data-i18n="privacy-policy-list-8"></li>
             </ul>
           </section>
           <section id="support">
             <h6 data-i18n="support"></h6>
             <p data-i18n="support-description"></p>
+            <strong data-i18n="support-sp-q"></strong>
+            <p data-i18n="support-sp-a"></p>
+            <strong data-i18n="support-donations-q"></strong><br>
+            <p data-i18n="support-donations-a"></p>
+            <p>
+              <span data-i18n="support-mor-1"></span><a href="https://polar.sh/legal/privacy-policy" data-i18n="support-mor-2" class="error-color"></a><span data-i18n="support-mor-3"></span>
+            </p>
+            <support-hearts class="margin-top-2 margin-bottom-2"></support-hearts>
+            <div class="text-align-center">
+              <md-button id="support" class="support" href="#" target="_self"></md-button>
+              <p data-i18n="support-policy" class="margin-top-2"></p>
+              <p data-i18n="email-support"></p>
+            </div>
           </section>
           <section id="thank-you">
             <h6 data-i18n="thank-you"></h6>

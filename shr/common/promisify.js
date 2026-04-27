@@ -1,6 +1,0 @@
-/*!
- * Promisify
- * @copyright (c) 2020 Sixcious
- * @license https://github.com/sixcious/shr/blob/main/LICENSE
- */
-class Promisify{static loadScript(e){return new Promise((r,t)=>{e.onload=r,e.onerror=function(){t("")},(document.head||document.body||document.documentElement).appendChild(e)})}static sleep(e,r){return new Promise((t,o)=>{const s=setTimeout(t,e);r?.signal?.addEventListener("abort",()=>{clearTimeout(s),o("")})})}static runtimeOpenOptionsPage(){return new Promise(e=>{chrome.runtime.openOptionsPage(r=>{e(r),chrome.runtime.lastError})})}static runtimeSendMessage(e){return new Promise(r=>{e.async=!0,chrome.runtime.sendMessage(e,e=>{r(e),chrome.runtime.lastError})})}static storageGet(e=null,r="local",t=[]){return new Promise(o=>{chrome.storage[r].get(e,r=>{t.forEach(t=>{t!==e&&delete r[t]}),e&&!Array.isArray(e)?o(r[e]):o(r)})})}static storageSet(e,r="local"){return new Promise(t=>{chrome.storage[r].set(e,t)})}static storageRemove(e,r="local"){return new Promise(t=>{chrome.storage[r].remove(e,t)})}static storageClear(e="local"){return new Promise(r=>{chrome.storage[e].clear(r)})}static tabsSendMessage(e,r,t){return new Promise(o=>{r.async=!0,chrome.tabs.sendMessage(e,r,t,e=>{o(e),chrome.runtime.lastError})})}}

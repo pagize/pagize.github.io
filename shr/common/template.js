@@ -338,8 +338,8 @@ import{html,nothing,render}from"/lib/lit/lit.all.mjs";class TemplateElement exte
           <div id="feedback-button" class="icon-button" data-tooltip="feedback-button-tooltip">
             <svg id="feedback-icon" class="options-header-svg hvr-grow smaller-icon"><use href="/lib/fontawesome/regular.svg#message"></use></svg>
           </div>
-          <md-button id="help-guide" type="raised" href="https://github.com/sixcious/__app__/wiki"></md-button>
-          <md-button id="report-an-issue" type="raised" class="red" href="https://github.com/sixcious/__app__/issues"></md-button>
+          <md-button id="help-guide" type="raised" href="{{github}}/wiki"></md-button>
+          <md-button id="report-an-issue" type="raised" class="red" href="{{github}}/issues"></md-button>
         </div>
       </header>
     `}}class OptionsSection extends TemplateElement{slotChildren=!0;template(){return html`
