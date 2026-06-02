@@ -39,7 +39,7 @@
           <span class="mdc-top-app-bar__title">
             <div class="logo">
               <a class="logo-link" href="/">
-                <div class="logo-six-heart">
+                <div id="top-app-bar-logo" class="logo-six-heart">
                   <md-icon class="logo-heart hvr-grow-2x" icon="solid.svg#heart"></md-icon>
                   <div class="logo-six">6</div>  
                 </div>
@@ -81,8 +81,8 @@
               <p data-i18n="default-description-3"></p>
             </blockquote>
             <div class="button-group">
-              <md-button i18n="help" type="raised" href="/help" target="_self"></md-button>
-              <md-button i18n="privacy-policy" type="raised" class="red" href="/privacy-policy" target="_self"></md-button>
+              <md-button i18n="help" type="raised" href="/help/" target="_self"></md-button>
+              <md-button i18n="privacy-policy" type="raised" class="red" href="/privacy-policy/" target="_self"></md-button>
             </div>
           </section>
           <section id="url-incrementer">
@@ -160,7 +160,7 @@
               <li data-i18n="privacy-policy-list-8"></li>
             </ul>
           </section>
-          <section id="support">
+          <section id="sp">
             <h6 data-i18n="support"></h6>
             <p data-i18n="support-description"></p>
             <strong data-i18n="support-sp-q"></strong>
@@ -168,7 +168,8 @@
             <strong data-i18n="support-donations-q"></strong><br>
             <p data-i18n="support-donations-a"></p>
             <p>
-              <span data-i18n="support-mor-1"></span><a href="https://polar.sh/legal/privacy-policy" data-i18n="support-mor-2" class="error-color"></a><span data-i18n="support-mor-3"></span>
+              <span data-i18n="support-mor-1"></span><a href="https://polar.sh/legal/privacy-policy" data-i18n="support-mor-2"
+                class="error-color"></a><span data-i18n="support-mor-3"></span>
             </p>
             <support-hearts class="margin-top-2 margin-bottom-2"></support-hearts>
             <div class="text-align-center">
@@ -176,6 +177,13 @@
               <p data-i18n="support-policy" class="margin-top-2"></p>
               <p data-i18n="email-support"></p>
             </div>
+          </section>
+          <section id="support">
+            <h6 data-i18n="support"></h6>
+            <p>
+              <span data-i18n="support-setup-description"></span>
+              <md-icon class="logo-heart" icon="solid.svg#heart"></md-icon>
+            </p>
           </section>
           <section id="thank-you">
             <h6 data-i18n="thank-you"></h6>
@@ -242,19 +250,19 @@
                 <h6 data-i18n="site-content"></h6>
                 <ul>
                   <li>
-                    <a href="/about">
+                    <a href="/about/">
                       <md-icon icon="solid.svg#circle-info"></md-icon>
                       <span data-i18n="about"></span>
                     </a>
                   </li>
                   <li>
-                    <a href="/help">
+                    <a href="/help/">
                       <md-icon icon="solid.svg#circle-question"></md-icon>
                       <span data-i18n="help"></span>
                     </a>
                   </li>
                   <li>
-                    <a href="/privacy-policy">
+                    <a href="/privacy-policy/">
                       <md-icon icon="solid.svg#shield-halved"></md-icon>
                       <span data-i18n="privacy-policy"></span>
                     </a>
